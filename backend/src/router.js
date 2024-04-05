@@ -1,23 +1,20 @@
 const express = require("express");
+const carControllers = require("./controllers/carControllers");
+
+// const offerControllers = require("./controllers/OfferControllers");
 
 const router = express.Router();
 
-/* ************************************************************************* */
-// Define Your API Routes Here
-/* ************************************************************************* */
+router.get("/car", carControllers.browse);
+router.get("/car/:id", carControllers.read);
+router.post("/car", carControllers.add);
+router.put("/car/:id", carControllers.update);
+router.delete("/car/:id", carControllers.destroy);
 
-// Import itemControllers module for handling item-related operations
-const itemControllers = require("./controllers/itemControllers");
-
-// Route to get a list of items
-router.get("/items", itemControllers.browse);
-
-// Route to get a specific item by ID
-router.get("/items/:id", itemControllers.read);
-
-// Route to add a new item
-router.post("/items", itemControllers.add);
-
-/* ************************************************************************* */
+// router.get("/offer", offerControllers.browse);
+// router.get("/offer/:id", offerControllers.read);
+// router.post("/offer", offerControllers.add);
+// router.put("/offer/:id", offerControllers.edit);
+// router.delete("/offer/:id", offerControllers.destroy);
 
 module.exports = router;

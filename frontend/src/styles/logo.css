@@ -1,0 +1,17 @@
+.logo_container > img {
+  width: 18vw;
+  height: auto;
+}
+
+.logo_container {
+  position: absolute;
+  top: -0.5rem;
+  left: -0.5rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .logo_container > img {
+    width: 12vw;
+    height: auto;
+  }
+}
